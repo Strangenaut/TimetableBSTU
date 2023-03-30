@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lessons</string>
+
+    <!-- Connection error -->
+    <string name="no_connection">No connection!</string>
+    <string name="check_connection_and_try_again">"Check your connection and try again"</string>
+
+    <!-- Week code -->
+    <string name="wait">Wait…</string>
+    <string name="even">Even</string>
+    <string name="odd">Odd</string>
+
+    <!-- Weekdays -->
+    <string name="sunday">Su</string>
+    <string name="monday">Mo</string>
+    <string name="tuesday">Tu</string>
+    <string name="wednesday">We</string>
+    <string name="thursday">Th</string>
+    <string name="friday">Fr</string>
+    <string name="saturday">Sa</string>
+
+    <!-- Lesson types -->
+    <string name="lecture">Lecture</string>
+    <string name="practice">Practice</string>
+    <string name="lab">Lab</string>
+
+    <!-- Common -->
+    <string name="groups">Groups</string>
+    <string name="today">Today</string>
+    <string name="update">Update</string>
+    <string name="search">Search</string>
+</resources>

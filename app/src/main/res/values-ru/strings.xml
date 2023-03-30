@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Пары</string>
+
+    <!-- Connection error -->
+    <string name="no_connection">Нет интернета!</string>
+    <string name="check_connection_and_try_again">"Проверьте подключение к сети и повторите попытку" </string>
+
+    <!-- Week code -->
+    <string name="wait">Секунду…</string>
+    <string name="even">Чётная</string>
+    <string name="odd">Нечётная</string>
+
+    <!-- Weekdays -->
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Вс</string>
+
+    <!-- Lesson types -->
+    <string name="lecture">Лекция</string>
+    <string name="practice">Практика</string>
+    <string name="lab">Лабораторная</string>
+
+    <!-- Common -->
+    <string name="groups">Группы</string>
+    <string name="today">Сегодня</string>
+    <string name="update">Обновить</string>
+    <string name="search">Поиск</string>
+</resources>
