@@ -34,7 +34,6 @@ fun TimetableScreen(
         mutableStateOf("")
     }
 
-
     var bottomBarHeightDp by remember {
         mutableStateOf(0)
     }
