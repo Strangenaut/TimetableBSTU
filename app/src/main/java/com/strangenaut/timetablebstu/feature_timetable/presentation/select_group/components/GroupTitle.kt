@@ -1,20 +1,17 @@
-package com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable.components
+package com.strangenaut.timetablebstu.feature_timetable.presentation.select_group.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.theme.Shapes
-import com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable.GetGroupTimetableEvent
 
 @Composable
 fun GroupTitle(

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Пары</string>
+    <string name="app_name">Занятия</string>
 
     <!-- Connection error -->
-    <string name="no_connection">Нет интернета!</string>
-    <string name="check_connection_and_try_again">"Проверьте подключение к сети и повторите попытку" </string>
+    <string name="no_connection">Нет соединения!</string>
+    <string name="connect_to_the_internet">Нет подключения</string>
+    <string name="check_connection_and_try_again">
+        Проверьте, подключено ли устройство к Интернету.
+    </string>
+    <string name="tap_to_retry">Повторить попытку</string>
+
+    <!-- Select group screen -->
+    <string name="select_group">Выберите группу</string>
+    <string name="to_select_group_do_this">
+        Чтобы выбрать группу, нажмите \"Группа\" в правом верхнем углу или кнопку ниже.
+    </string>
+    <string name="tap_to_select">Нажмите, чтобы выбрать</string>
+    <string name="group">Группа</string>
+    <string name="no_groups_found">По вашему запросу ничего не найдено</string>
 
     <!-- Week code -->
     <string name="wait">Секунду…</string>

@@ -1,4 +1,4 @@
-package com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable
+package com.strangenaut.timetablebstu.feature_timetable.presentation.select_group
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -15,17 +15,18 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.strangenaut.timetablebstu.R
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.SharedViewModel
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.theme.isDarkThemeEnabled
-import com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable.components.GroupTitle
+import com.strangenaut.timetablebstu.feature_timetable.presentation.select_group.components.GroupTitle
 
 @Composable
-fun GetGroupTimetableScreen(
+fun SelectGroupScreen(
     navController: NavController,
-    viewModel: GetGroupTimetableViewModel,
+    viewModel: SelectGroupViewModel,
     sharedViewModel: SharedViewModel
 ) {
     val state = viewModel.state.value
@@ -81,7 +82,9 @@ fun GetGroupTimetableScreen(
                             typedGroup = typedValue
                             groupsNumbers = state.groupsNumbers
                             groupsNumbers = groupsNumbers.filter {
-                                typedGroup.uppercase() in it
+                                typedGroup
+                                    .replace(" ", "")
+                                    .uppercase() in it
                             }
                         },
                         singleLine = true,
@@ -103,11 +106,10 @@ fun GetGroupTimetableScreen(
                     )
                     if(isHintVisible) {
                         Text(
-                            text = "Поиск",
+                            text = stringResource(R.string.search),
                             style = MaterialTheme.typography.body1,
                             color = MaterialTheme.colors.onSecondary,
-                            modifier = Modifier
-                                .padding(horizontal = 16.dp, vertical = 8.dp)
+                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                         )
                     }
                 }
@@ -135,7 +137,8 @@ fun GetGroupTimetableScreen(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "(пусто)",
+                            text = stringResource(R.string.no_groups_found),
+                            textAlign = TextAlign.Center,
                             softWrap = true,
                             fontSize = MaterialTheme.typography.h2.fontSize,
                             color = MaterialTheme.colors.onSecondary,
@@ -148,7 +151,7 @@ fun GetGroupTimetableScreen(
                 GroupTitle(
                     title = groupsNumbers[i],
                     onClick = {
-                        viewModel.onEvent(GetGroupTimetableEvent.SelectGroup(groupsNumbers[i]))
+                        viewModel.onEvent(SelectGroupEvent.SelectGroup(groupsNumbers[i]))
                         navController.navigateUp()
                     }
                 )

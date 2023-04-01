@@ -14,8 +14,8 @@ import com.strangenaut.timetablebstu.feature_timetable.presentation.core.Screen
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.SharedViewModel
 import com.strangenaut.timetablebstu.feature_timetable.presentation.timetable.TimetableScreen
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.theme.TimetableBSTUTheme
-import com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable.GetGroupTimetableScreen
-import com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable.GetGroupTimetableViewModel
+import com.strangenaut.timetablebstu.feature_timetable.presentation.select_group.SelectGroupScreen
+import com.strangenaut.timetablebstu.feature_timetable.presentation.select_group.SelectGroupViewModel
 import com.strangenaut.timetablebstu.feature_timetable.presentation.timetable.TimetableEvent
 import com.strangenaut.timetablebstu.feature_timetable.presentation.timetable.TimetableViewModel
 import com.strangenaut.timetablebstu.feature_timetable.presentation.timetable.receiver.DateChangedReceiver
@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
 
     private val timetableViewModel: TimetableViewModel by viewModels()
 
-    private val getGroupTimetableViewModel: GetGroupTimetableViewModel by viewModels()
+    private val selectGroupViewModel: SelectGroupViewModel by viewModels()
 
     private lateinit var receiver: DateChangedReceiver
 
@@ -60,9 +60,9 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable(route = Screen.GetGroupTimetableScreen.route) {
-                        GetGroupTimetableScreen(
+                        SelectGroupScreen(
                             navController = navController,
-                            viewModel = getGroupTimetableViewModel,
+                            viewModel = selectGroupViewModel,
                             sharedViewModel = sharedViewModel
                         )
                     }

@@ -1,26 +1,18 @@
 package com.strangenaut.timetablebstu.feature_timetable.presentation.timetable.components
 
-import androidx.compose.animation.core.animateFloat
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import com.strangenaut.timetablebstu.feature_timetable.presentation.core.shimmerEffect
 import com.strangenaut.timetablebstu.feature_timetable.presentation.core.theme.Shapes
 
 @Composable
-fun ShimmerLoading(
+fun LoadingTimetableShimmer(
     isLoading: Boolean,
     contentAfterLoading: @Composable () -> Unit,
     modifier: Modifier = Modifier
@@ -44,7 +36,7 @@ fun ShimmerLoading(
                             .fillMaxSize()
                             .padding(8.dp)
                             .clip(shape = Shapes.large)
-                            .background(MaterialTheme.colors.primaryVariant)
+                            .shimmerEffect()
                     )
                 }
                 Box(
@@ -72,7 +64,7 @@ fun ShimmerLoading(
                                                 .height(26.dp)
                                                 .clip(shape = Shapes.medium)
                                                 .padding(vertical = 4.dp)
-                                                .background(MaterialTheme.colors.primaryVariant)
+                                                .shimmerEffect()
                                         )
                                     }
                                 }
@@ -82,7 +74,7 @@ fun ShimmerLoading(
                                         .height(100.dp)
                                         .clip(shape = Shapes.medium)
                                         .padding(horizontal = 4.dp)
-                                        .background(MaterialTheme.colors.primaryVariant)
+                                        .shimmerEffect()
                                 )
                                 Column (
                                     verticalArrangement = Arrangement.SpaceBetween,
@@ -96,7 +88,7 @@ fun ShimmerLoading(
                                             .height(22.dp)
                                             .clip(shape = Shapes.medium)
                                             .padding(vertical = 2.dp)
-                                            .background(MaterialTheme.colors.primaryVariant)
+                                            .shimmerEffect()
                                     )
                                     Box(
                                         modifier = Modifier
@@ -104,7 +96,7 @@ fun ShimmerLoading(
                                             .height(22.dp)
                                             .clip(shape = Shapes.medium)
                                             .padding(vertical = 2.dp)
-                                            .background(MaterialTheme.colors.primaryVariant)
+                                            .shimmerEffect()
                                     )
                                     Box(
                                         modifier = Modifier
@@ -112,7 +104,7 @@ fun ShimmerLoading(
                                             .height(22.dp)
                                             .clip(shape = Shapes.medium)
                                             .padding(vertical = 2.dp)
-                                            .background(MaterialTheme.colors.primaryVariant)
+                                            .shimmerEffect()
                                     )
                                     Box(
                                         modifier = Modifier
@@ -120,7 +112,7 @@ fun ShimmerLoading(
                                             .height(22.dp)
                                             .clip(shape = Shapes.medium)
                                             .padding(vertical = 2.dp)
-                                            .background(MaterialTheme.colors.primaryVariant)
+                                            .shimmerEffect()
                                     )
                                 }
                             }
@@ -133,33 +125,5 @@ fun ShimmerLoading(
         }
     } else {
         contentAfterLoading()
-    }
-}
-
-fun Modifier.shimmerEffect(): Modifier = composed {
-    var size by remember {
-        mutableStateOf(IntSize.Zero)
-    }
-    val transition = rememberInfiniteTransition()
-    val startOffsetX by transition.animateFloat(
-        initialValue = -2 * size.width.toFloat(),
-        targetValue = 2 * size.width.toFloat(),
-        animationSpec = infiniteRepeatable(
-            animation = tween(1500)
-        )
-    )
-
-    background(
-        brush = Brush.linearGradient(
-            colors = listOf(
-                MaterialTheme.colors.surface,
-                MaterialTheme.colors.primaryVariant,
-                MaterialTheme.colors.surface,
-            ),
-            start = Offset(startOffsetX, 0f),
-            end = Offset(startOffsetX + size.width.toFloat(), size.height.toFloat())
-        )
-    ).onGloballyPositioned {
-        size = it.size
     }
 }

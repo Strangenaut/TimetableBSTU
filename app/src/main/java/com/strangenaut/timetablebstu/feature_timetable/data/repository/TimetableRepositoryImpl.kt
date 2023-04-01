@@ -16,6 +16,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.io.File
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 class TimetableRepositoryImpl @Inject constructor(
@@ -52,6 +53,9 @@ class TimetableRepositoryImpl @Inject constructor(
             try {
                 xmlString = timetableService.getTimetableXml(fileNumber).string()
             } catch (e: Exception) {
+                if (e is UnknownHostException) {
+                    return Timetable()
+                }
                 Log.e(TAG, "Error getting timetable.xml: ${e.message}")
                 Log.d(TAG, "Trying to get timetable with the new file number: ${++fileNumber}")
             }
@@ -66,6 +70,9 @@ class TimetableRepositoryImpl @Inject constructor(
                 tempXmlString = timetableService.getTimetableXml(fileNumber).string()
                 tempXmlString
             } catch (e: Exception) {
+                if (e is UnknownHostException) {
+                    return Timetable()
+                }
                 Log.e(TAG, "Error getting timetable.xml: ${e.message}")
                 fileNumber--
                 ""

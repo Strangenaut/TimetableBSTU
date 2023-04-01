@@ -1,4 +1,4 @@
-package com.strangenaut.timetablebstu.feature_timetable.presentation.get_group_timetable
+package com.strangenaut.timetablebstu.feature_timetable.presentation.select_group
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -11,21 +11,21 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class GetGroupTimetableViewModel @Inject constructor(
+class SelectGroupViewModel @Inject constructor(
     private val useCases: TimetableUseCases,
     private val repository: TimetableRepository
 ) : ViewModel() {
 
-    private val _state = mutableStateOf(GetGroupTimetableState())
-    val state: State<GetGroupTimetableState> = _state
+    private val _state = mutableStateOf(SelectGroupState())
+    val state: State<SelectGroupState> = _state
 
     init {
-        onEvent(GetGroupTimetableEvent.GetGroupsList)
+        onEvent(SelectGroupEvent.GetGroupsList)
     }
 
-    fun onEvent(event: GetGroupTimetableEvent) {
+    fun onEvent(event: SelectGroupEvent) {
         when (event) {
-            is GetGroupTimetableEvent.GetGroupsList -> {
+            is SelectGroupEvent.GetGroupsList -> {
                 viewModelScope.launch {
                     repository.timetable.observeForever {
                         _state.value = _state.value.copy(
@@ -34,7 +34,7 @@ class GetGroupTimetableViewModel @Inject constructor(
                     }
                 }
             }
-            is GetGroupTimetableEvent.SelectGroup -> {
+            is SelectGroupEvent.SelectGroup -> {
                 viewModelScope.launch {
                     _state.value = _state.value.copy(
                         selectedGroup = event.selectedGroup

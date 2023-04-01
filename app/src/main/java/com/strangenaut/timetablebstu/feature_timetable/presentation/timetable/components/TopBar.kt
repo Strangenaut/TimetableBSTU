@@ -37,9 +37,9 @@ fun TopBar(
                     modifier = Modifier.padding(horizontal = 8.dp)
                 )
                 SwitchButton(
-                    switchPadding = 6.dp,
+                    switchPadding = 2.dp,
                     buttonWidth = 50.dp,
-                    buttonHeight = 25.dp,
+                    buttonHeight = 30.dp,
                     value = checked,
                     onCheckedChange = onCheckedChange
                 )

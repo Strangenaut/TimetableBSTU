@@ -4,7 +4,18 @@
 
     <!-- Connection error -->
     <string name="no_connection">No connection!</string>
-    <string name="check_connection_and_try_again">"Check your connection and try again"</string>
+    <string name="connect_to_the_internet">Connect to the Internet</string>
+    <string name="check_connection_and_try_again">You`re offline. Check your connection.</string>
+    <string name="tap_to_retry">Tap to retry</string>
+
+    <!-- Select group screen -->
+    <string name="select_group">Select group</string>
+    <string name="to_select_group_do_this">
+        To select a group, tap \"Group\" in the upper right corner or the button below.
+    </string>
+    <string name="tap_to_select">Tap to select</string>
+    <string name="group">Group</string>
+    <string name="no_groups_found">No results</string>
 
     <!-- Week code -->
     <string name="wait">Wait…</string>

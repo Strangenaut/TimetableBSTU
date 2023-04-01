@@ -11,9 +11,4 @@ data class Lesson(
     val lessonType: LessonType = LessonType.UNIDENTIFIED,
     val lecturers: String = "",
     val classroom: String = "",
-) {
-
-    override fun toString(): String {
-        return "$weekCode $timeBegin $timeEnd $lessonType $discipline $classroom $lecturers"
-    }
-}
+)
