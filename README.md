@@ -33,6 +33,5 @@
 ![Загруженное расписание (тёмная тема)](https://user-images.githubusercontent.com/98609700/231456170-c65e6c12-1674-4a6f-9faf-b4fa1c63ecfd.png)
 ![Загруженное расписание отфильтрованное (тёмная тема)](https://user-images.githubusercontent.com/98609700/231456150-957e0612-16a4-42e1-9e9b-953b12e310ab.png)
 ![Экран выбора группы (тёмная тема)](https://user-images.githubusercontent.com/98609700/231456206-dd411808-b3e6-4331-986d-28ec7c90c735.png)
-### Иконка и экран загрузки
-![Иконка](https://user-images.githubusercontent.com/98609700/231458241-a204ddee-f6ea-4793-ac8f-21df7ca314d1.png)
+### Экран загрузки
 ![Экран загрузки приложения](https://user-images.githubusercontent.com/98609700/231458259-ba4e704a-dc78-4aa1-9ad7-ab53e870cf65.png)
